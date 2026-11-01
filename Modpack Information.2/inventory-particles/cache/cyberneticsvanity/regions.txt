@@ -1,0 +1,6 @@
+cyberneticsvanity:vanity_implant	inventory_particles:vanity_implant/fallback/standard_0	0	0	8	8
+cyberneticsvanity:vanity_implant	inventory_particles:vanity_implant/fallback/standard_1	8	0	8	8
+cyberneticsvanity:vanity_implant	inventory_particles:vanity_implant/fallback/standard_2	16	0	8	8
+cyberneticsvanity:vanity_implant	inventory_particles:vanity_implant/fallback/standard_3	24	0	8	8
+cyberneticsvanity:vanity_implant	inventory_particles:vanity_implant/fallback/standard_4	32	0	8	8
+cyberneticsvanity:vanity_implant	inventory_particles:vanity_implant/fallback/standard_5	40	0	8	8

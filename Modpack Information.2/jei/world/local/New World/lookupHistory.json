@@ -1,0 +1,8 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"chromeware:kinetic_frame"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"superbwarfare:glock_18"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"superbwarfare:mp_5_blueprint"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"superbwarfare:mp_5"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"createcybernetics:robosurgeon"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]
