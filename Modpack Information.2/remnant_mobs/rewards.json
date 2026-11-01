@@ -1,0 +1,48 @@
+// Remnants: RPG Mobs 3.0: rewards.
+// Edit and run /remnants reload, or restart. Missing keys are restored with their defaults.
+{
+  // Dropped experience is multiplied by (1 + level x per_level), then by the rank's experience.
+  "experience": {
+    "per_level": 0.055
+  },
+
+  // extra_rolls: ranked mobs roll their loot table again (loot_rolls in ranks.json).
+  // shards: ranked mobs drop Remnant Shards. require_player_kill: only when a player took part in the kill.
+  "loot": {
+    "extra_rolls": true,
+    "shards": true,
+    "require_player_kill": true
+  },
+
+  // With RPG Attribute System: bonus Valor for the player who kills a ranked mob, on top of RAS's own
+  // kill Valor. Bonus = (per_rank + level x per_level) x challenge. challenge rises to max when the mob
+  // is max_at levels above the player and falls to min at min_at levels below. message: show the bonus
+  // above the hotbar.
+  "valor": {
+    "enabled": true,
+    "per_rank": {
+      "common": 0.0,
+      "veteran": 15,
+      "elite": 35,
+      "champion": 85,
+      "remnant": 200
+    },
+    "per_level": 1.35,
+    "challenge": {
+      "max": 1.5,
+      "max_at": 10,
+      "min": 0.25,
+      "min_at": 15
+    },
+    "message": true
+  },
+
+  // Absorbing a Remnant Shard grants valor Valor with RPG Attribute System, or experience points without it.
+  "shards": {
+    "valor": 22,
+    "experience": 8
+  },
+
+  // Mobs marked with a Brand of Challenge multiply every reward above by this.
+  "branded_multiplier": 2.0
+}

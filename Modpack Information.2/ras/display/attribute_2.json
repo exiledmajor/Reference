@@ -1,0 +1,7 @@
+{
+  "enable": true,
+  "display_name": "§fDamage §f| §c",
+  "attribute_namespace": "minecraft",
+  "attribute_name": "attack_damage",
+  "display_modifer": 1.0
+}

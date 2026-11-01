@@ -1,0 +1,29 @@
+#Allow vanity implant drops from villagers.
+#When false, villagers never drop the implant regardless of chance.
+enableVillagerDrop = true
+#Base chance (0.0-1.0) that a villager drops a vanity implant on death.
+#Default 0.125 = 12.5% (1/8).
+# Default: 0.125
+# Range: 0.0 ~ 1.0
+villagerDropChance = 0.125
+#Extra drop chance added per Looting enchantment level on the killer's weapon.
+# Default: 0.025
+# Range: 0.0 ~ 1.0
+lootingBonusPerLevel = 0.025
+#Hard cap on villager drop chance after Looting bonuses (0.0-1.0).
+# Default: 0.3
+# Range: 0.0 ~ 1.0
+maxDropChance = 0.3
+#When true (default), players must surgically install the vanity implant to open
+#the Cyber Vanity menu and apply hide toggles.
+#Set false on staff servers that want free vanity for everyone.
+requireVanityImplant = true
+#Minimum vanilla permission level required to use Cyber Vanity (menu + applying hides).
+#0 = everyone, 1 = moderators, 2 = gamemasters, 3 = admins, 4 = owners.
+#Combined with requireVanityImplant: player must meet BOTH gates when implant is required.
+# Default: 0
+# Range: 0 ~ 4
+allowedPermissionLevel = 0
+#Visually remove missing arms and legs from player skins.
+#Supports vanilla Steve/wide and Alex/slim skins and is synchronized for all modded clients.
+hideMissingLimbs = false

@@ -1,0 +1,14 @@
+{
+  "display_name": "Exploration : ",
+  "description": "Base Luck: 0.0. Each point adds 0.10 Luck (+1.0 luck every 10 points). Default max level: 500.",
+  "cmd_to_exc": [
+    "/attribute @s minecraft:luck base set [param(0.1)]"
+  ],
+  "on_level_event": "",
+  "tip_to_display": "§7Influences the chances of receiving better loot or triggering beneficial events",
+  "init_val_attribute": 0.0,
+  "max_level": 500.0,
+  "base_value_per_point": 0.1,
+  "lock": false,
+  "icon_path": "screens/att_8.png"
+}

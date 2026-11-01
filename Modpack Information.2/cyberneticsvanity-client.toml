@@ -1,0 +1,7 @@
+#Master Cyber Vanity switch. When true, per-implant hide keys below apply.
+#When false, all cyberware visuals render normally.
+cyberVanityEnabled = false
+#Stable implant keys to hide while Cyber Vanity is enabled.
+#Format: SLOT:index:namespace:path  (e.g. LARM:0:createcybernetics:basecyberware_leftarm)
+#Meta keys: __meta:highlights , __meta:limb_hiding
+hiddenImplants = []

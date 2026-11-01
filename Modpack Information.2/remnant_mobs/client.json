@@ -1,0 +1,29 @@
+// Remnants: RPG Mobs 3.0: client-side visuals. These only change what you see.
+{
+  // Plates above leveled mobs. distance: how far ranked mobs show theirs; common_distance: the same
+  // for Common mobs (0 hides them); traits_distance: how close you must be to read traits.
+  // look_at_only: only the mob under your crosshair. health_numbers: current health beside the bar.
+  // scale: plate size (0.5-2). level_colors: "relative" colours levels against your own level (RPG
+  // Attribute System, or experience levels if the server uses them), "absolute" keeps them neutral.
+  // replace_name_tag: named mobs show their name on the plate instead of a separate name tag.
+  // hide_with_hud: hide plates along with the HUD (F1), like vanilla name tags.
+  "nameplates": {
+    "enabled": true,
+    "distance": 24,
+    "common_distance": 12,
+    "traits_distance": 12,
+    "look_at_only": false,
+    "health_numbers": true,
+    "scale": 1.0,
+    "level_colors": "relative",
+    "replace_name_tag": true,
+    "hide_with_hud": true
+  },
+
+  // lens: the Hunter's Lens threat readout and scope stat sheet. hunters_moon: a moon icon while a
+  // Hunter's Moon is up.
+  "hud": {
+    "lens": true,
+    "hunters_moon": true
+  }
+}

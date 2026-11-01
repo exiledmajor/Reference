@@ -1,0 +1,456 @@
+["Ragdoll Settings"]
+	#How long ragdolls last before despawning, in ticks.
+	# Default: 600
+	# Range: 20 ~ 12000
+	ragdollLifetime = 600
+	#Maximum ragdolls that can exist at once; the oldest is removed past this.
+	#Raise it if your hardware can handle more (watch physics= in the perf log).
+	# Default: 40
+	# Range: 1 ~ 1000
+	maxRagdolls = 40
+	#A lower maxRagdolls for particular dimensions. One entry per dimension, as
+	#dimension=count, like "minecraft:the_nether=15" or "mymod:moon=5". Can only lower
+	#the cap, never raise it past maxRagdolls. Dimensions not listed use maxRagdolls.
+	dimensionMaxRagdolls = []
+	#Maximum death ragdolls one player can have at once; their oldest is removed past this.
+	#Addons may bypass this for bodies that must not be removed (like corpses holding loot).
+	# Default: 3
+	# Range: 1 ~ 20
+	maxRagdollsPerPlayer = 3
+	#Master switch for ragdoll spawning.
+	enableRagdolls = true
+	#Allow player death ragdolls.
+	enablePlayerRagdolls = true
+	#Allow non-player (mob) death ragdolls.
+	enableMobRagdolls = true
+	#Experimental: build a ragdoll measured off the model of mobs with no built-in rig,
+	#which is most modded non-humanoids. Modded humanoids are unaffected.
+	#Off by default because the measured bodies are often badly sized.
+	enableGenericMobRagdolls = false
+	#Entity ids that never ragdoll, like minecraft:zombie. Use minecraft:player for players.
+	entityDenylist = []
+	#When on, only the entity ids in whitelist ragdoll and everything else dies as vanilla.
+	#The denylist still applies on top of it.
+	whitelistOnly = false
+	#Entity ids that ragdoll while whitelistOnly is on, like minecraft:zombie.
+	#minecraft:player is players; take it out to leave players without ragdolls too.
+	whitelist = ["minecraft:player"]
+	#Dimension ids where nothing ragdolls, like minecraft:the_end. Modded dimensions work too.
+	disabledDimensions = []
+
+#Hit Impulse Settings
+[hitImpulse]
+	#Base impulse magnitude for a TACZ headshot.
+	# Default: 6.0
+	# Range: 0.0 ~ 200.0
+	headshot = 6.0
+	#Base impulse magnitude for a TACZ body shot.
+	# Default: 4.0
+	# Range: 0.0 ~ 200.0
+	body = 4.0
+	#Base impulse magnitude for melee kills.
+	# Default: 10.0
+	# Range: 0.0 ~ 200.0
+	melee = 10.0
+	#Base impulse magnitude for vanilla projectiles.
+	# Default: 8.0
+	# Range: 0.0 ~ 200.0
+	vanillaProjectile = 8.0
+	#Base impulse for hitting a body that is already lying there, before the weapon and
+	#the swing timer scale it. The killing blow has its own multipliers, so this one is
+	#much larger: it is the whole push. Lower it if corpses fly too far.
+	# Default: 75.0
+	# Range: 0.0 ~ 500.0
+	punch = 75.0
+	#Launch speed in blocks/second for a body killed point-blank by an explosion (TNT, creepers, TACZ explosives, etc.).
+	#Eases down to 60% at 8+ blocks from the blast, independent of the victim's health.
+	#Higher = bodies thrown further.
+	# Default: 35.0
+	# Range: 0.0 ~ 90.0
+	explosionLaunchSpeed = 35.0
+	#Blasts also throw ragdolls already lying within reach, not only the bodies they kill.
+	explosionsPushRagdolls = true
+	#A mob that blows itself up, like a creeper, still leaves a body.
+	#It never dies of damage, so without this there is nothing to ragdoll.
+	creeperExplosionRagdolls = true
+	#Knockback on a living player whom an addon has ragdolled pushes their body.
+	knockbackPushesLiveRagdolls = true
+	#Moving pistons and the blocks they push shove ragdolls out of the way instead of closing over them.
+	pistonsPushRagdolls = true
+	#Flat upward kick added to every hit, in the same units as the impulses above.
+	#Prefer verticalLift below, which scales with the strength of the hit.
+	# Default: 0.3
+	# Range: 0.0 ~ 5.0
+	verticalBias = 0.3
+	#Upward kick as a fraction of the hit's horizontal strength, added on top of verticalBias.
+	#Lifts the feet off the ground so bodies tumble instead of sliding. 0 = flat bias only.
+	# Default: 0.55
+	# Range: 0.0 ~ 4.0
+	verticalLift = 0.55
+	#Scale the impulse by sqrt(damage / damageReference).
+	damageScaling = false
+	#Damage value at which the impulse equals the base magnitude.
+	# Default: 6.0
+	# Range: 0.1 ~ 100.0
+	damageReference = 6.0
+	#How much hitting off-centre on a body part spins the body, as a multiplier.
+	#1 = realistic, higher = more exaggerated, 0 = ignore where the hit landed.
+	# Default: 2.0
+	# Range: 0.0 ~ 8.0
+	aimSpread = 2.0
+	#Extra spin for hits that come in from the side at an angle, even when aimed dead centre.
+	#Grows with the angle, as a fraction of the part's half-width. 0 = no extra spin.
+	# Default: 1.0
+	# Range: 0.0 ~ 1.0
+	attackerSideBias = 1.0
+	#For the killing hit on a standing body, how much it pivots around the feet instead of
+	#its centre (0 to 1). Higher makes bodies topple over rather than slide back.
+	# Default: 0.7
+	# Range: 0.0 ~ 1.0
+	groundLever = 0.7
+	#Width of the band down the middle of the chest treated as a dead-centre hit, as a
+	#fraction of the mob's width. Hits inside it cause no spin. 0 = off (recommended).
+	# Default: 0.0
+	# Range: 0.0 ~ 0.5
+	centerLeeway = 0.0
+	#Impulse scale for hits inside the centerLeeway band. Unused while centerLeeway is 0.
+	# Default: 0.85
+	# Range: 0.0 ~ 2.0
+	centerDistributionScale = 0.85
+	#Extra kick for the limb that was hit, as a fraction of the hit, on top of the whole-body push.
+	#Makes arms snap back and legs kick out. 0 = the body moves as one rigid piece.
+	# Default: 0.45
+	# Range: 0.0 ~ 3.0
+	limbWhip = 0.45
+	#How much stronger the limb whip is on light parts than heavy ones.
+	#0 = every part equal, 1 = inversely proportional to mass (arms flail, torso barely moves).
+	# Default: 0.6
+	# Range: 0.0 ~ 2.0
+	limbWhipMassBias = 0.6
+	#Multiplier on how much a hit spins the body. 1.0 = realistic, higher = more dramatic.
+	# Default: 1.35
+	# Range: 0.0 ~ 5.0
+	spinScale = 1.35
+	#Log every killing hit to the server log: the part hit, where it landed and the impulse.
+	#Useful for debugging hits that look wrong. One line per kill.
+	logResolvedHits = false
+	#Knockback multiplier, after the ragdoll spawns, for torso hits.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	partMultiplierTorso = 1.0
+	#Knockback multiplier, after the ragdoll spawns, for head hits.
+	# Default: 1.25
+	# Range: 0.0 ~ 10.0
+	partMultiplierHead = 1.25
+	#Knockback multiplier, after the ragdoll spawns, forleft leg hits.
+	# Default: 0.75
+	# Range: 0.0 ~ 10.0
+	partMultiplierLeftLeg = 0.75
+	#Knockback multiplier, after the ragdoll spawns, forright leg hits.
+	# Default: 0.75
+	# Range: 0.0 ~ 10.0
+	partMultiplierRightLeg = 0.75
+	#Knockback multiplier, after the ragdoll spawns, forleft arm hits.
+	# Default: 1.1
+	# Range: 0.0 ~ 10.0
+	partMultiplierLeftArm = 1.1
+	#Knockback multiplier, after the ragdoll spawns, forright arm hits.
+	# Default: 1.1
+	# Range: 0.0 ~ 10.0
+	partMultiplierRightArm = 1.1
+	#Knockback multiplier on the killing blow for torso hits.
+	# Default: 2.5
+	# Range: 0.0 ~ 10.0
+	deathPartMultiplierTorso = 2.5
+	#Knockback multiplier on the killing blow for head hits.
+	# Default: 2.0
+	# Range: 0.0 ~ 10.0
+	deathPartMultiplierHead = 2.0
+	#Knockback multiplier on the killing blow forleft leg hits.
+	# Default: 8.0
+	# Range: 0.0 ~ 10.0
+	deathPartMultiplierLeftLeg = 8.0
+	#Knockback multiplier on the killing blow forright leg hits.
+	# Default: 8.0
+	# Range: 0.0 ~ 10.0
+	deathPartMultiplierRightLeg = 8.0
+	#Knockback multiplier on the killing blow forleft arm hits.
+	# Default: 8.0
+	# Range: 0.0 ~ 10.0
+	deathPartMultiplierLeftArm = 8.0
+	#Knockback multiplier on the killing blow forright arm hits.
+	# Default: 8.0
+	# Range: 0.0 ~ 10.0
+	deathPartMultiplierRightArm = 8.0
+
+#Humanoid Joint Limits
+#How far each humanoid joint can bend, in degrees: pitch (forward/back), twist (about
+#the limb) and roll (sideways). Only affects humanoids (players, zombies, villagers, etc.).
+#Wider = looser and more fluid; narrower = stiffer. Past ~120 degrees poses look unnatural.
+[humanoidJointLimits]
+	#Multiplier on how far every joint can twist and roll, for all mobs (not just humanoids).
+	#Higher = looser, less stiff corpses. Pitch (forward/back bending) is not affected.
+	# Default: 1.5
+	# Range: 0.25 ~ 4.0
+	rangeScale = 1.5
+	#Remove all joint angle limits and let the relaxation springs alone hold the pose.
+	#Smoother, but allows unnatural poses (like a head turning all the way round).
+	#Requires jointRelaxation.frequency above 0, or bodies fold flat.
+	freeAngularAxes = false
+
+	#Angular limits for the neck, the head on the torso.
+	[humanoidJointLimits.neck]
+		# Default: -40.0
+		# Range: -180.0 ~ 180.0
+		minPitch = -40.0
+		# Default: -35.0
+		# Range: -180.0 ~ 180.0
+		minTwist = -35.0
+		# Default: -35.0
+		# Range: -180.0 ~ 180.0
+		minRoll = -35.0
+		# Default: 40.0
+		# Range: -180.0 ~ 180.0
+		maxPitch = 40.0
+		# Default: 55.0
+		# Range: -180.0 ~ 180.0
+		maxTwist = 55.0
+		# Default: 35.0
+		# Range: -180.0 ~ 180.0
+		maxRoll = 35.0
+
+	#Angular limits for the hip, a leg on the torso (minRoll = outward, mirrored per side).
+	[humanoidJointLimits.hip]
+		# Default: -45.0
+		# Range: -180.0 ~ 180.0
+		minPitch = -45.0
+		# Default: -35.0
+		# Range: -180.0 ~ 180.0
+		minTwist = -35.0
+		# Default: -30.0
+		# Range: -180.0 ~ 180.0
+		minRoll = -30.0
+		# Default: 75.0
+		# Range: -180.0 ~ 180.0
+		maxPitch = 75.0
+		# Default: 35.0
+		# Range: -180.0 ~ 180.0
+		maxTwist = 35.0
+		# Default: 15.0
+		# Range: -180.0 ~ 180.0
+		maxRoll = 15.0
+
+	#Angular limits for the shoulder, an arm on the torso (minRoll = outward, mirrored per side).
+	[humanoidJointLimits.shoulder]
+		# Default: -60.0
+		# Range: -180.0 ~ 180.0
+		minPitch = -60.0
+		# Default: -50.0
+		# Range: -180.0 ~ 180.0
+		minTwist = -50.0
+		# Default: -95.0
+		# Range: -180.0 ~ 180.0
+		minRoll = -95.0
+		# Default: 170.0
+		# Range: -180.0 ~ 180.0
+		maxPitch = 170.0
+		# Default: 50.0
+		# Range: -180.0 ~ 180.0
+		maxTwist = 50.0
+		# Default: 95.0
+		# Range: -180.0 ~ 180.0
+		maxRoll = 95.0
+
+	#Joint Relaxation
+	#A weak spring in every joint that pulls limbs back toward a natural rest pose, so
+	#corpses settle loosely instead of staying stiff. Jolt engine only; JBullet ignores these.
+	[humanoidJointLimits.jointRelaxation]
+		#Spring strength for arms and legs, in Hz. Higher = limbs return to rest faster and look
+		#stiffer; lower = looser, more dead-weight swinging. 0 disables relaxation.
+		# Default: 0.3
+		# Range: 0.0 ~ 20.0
+		frequency = 0.3
+		#Spring damping. 1.0 = limbs settle without bouncing; below 1 they swing past and back;
+		#above 1 they creep in slowly.
+		# Default: 0.5
+		# Range: 0.0 ~ 10.0
+		damping = 0.5
+		#Maximum force a joint spring can pull with, in newton-metres.
+		#Too high and bodies start posing themselves instead of lying where they fell.
+		# Default: 1.5
+		# Range: 0.0 ~ 100.0
+		maxTorque = 1.5
+		#How much spring strength remains while a body is falling. 1 = full, 0 = none until it lands.
+		#Lower lets limbs flail in the air instead of the body falling like a statue.
+		# Default: 0.15
+		# Range: 0.0 ~ 1.0
+		airborneScale = 0.15
+
+#Per-Body-Part Weight Settings
+#Multiplier on each body part's mass (1.0 = default), for every mob. Heavier parts resist
+#knockback more; lighter parts flail more. Also multiplied by physics.massScale.
+[partWeightMultipliers]
+	#Weight multiplier for the torso.
+	# Default: 1.0
+	# Range: 0.05 ~ 20.0
+	torso = 1.0
+	#Weight multiplier for the head.
+	# Default: 1.0
+	# Range: 0.05 ~ 20.0
+	head = 1.0
+	#Weight multiplier for the left arm.
+	# Default: 1.0
+	# Range: 0.05 ~ 20.0
+	leftArm = 1.0
+	#Weight multiplier for the right arm.
+	# Default: 1.0
+	# Range: 0.05 ~ 20.0
+	rightArm = 1.0
+	#Weight multiplier for the left leg.
+	# Default: 1.0
+	# Range: 0.05 ~ 20.0
+	leftLeg = 1.0
+	#Weight multiplier for the right leg.
+	# Default: 1.0
+	# Range: 0.05 ~ 20.0
+	rightLeg = 1.0
+
+#Per-Body-Part Gravity Settings
+#How hard gravity pulls each part, without changing its weight. 1.0 = normal, 0 = floats.
+#Weight alone cannot make a limb give way: a heavy arm just props the body up harder.
+#Raise the torso or drop the arms to stop a corpse resting on its own elbows.
+[partGravityMultipliers]
+	#Gravity multiplier for the torso.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	torso = 1.0
+	#Gravity multiplier for the head.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	head = 1.0
+	#Gravity multiplier for the left arm.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	leftArm = 1.0
+	#Gravity multiplier for the right arm.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	rightArm = 1.0
+	#Gravity multiplier for the left leg.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	leftLeg = 1.0
+	#Gravity multiplier for the right leg.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	rightLeg = 1.0
+
+#Physics Settings
+[physics]
+	#Gravity strength for ragdoll physics.
+	# Default: 15.0
+	# Range: 0.0 ~ 50.0
+	gravity = 15.0
+	#Gravity for particular dimensions, overriding the one above there. One entry per dimension,
+	#as dimension=gravity, like "minecraft:the_end=6.0" or "mymod:moon=2.5".
+	#Dimensions not listed use the gravity above.
+	dimensionGravity = []
+	#How hard water pushes a ragdoll up, as a multiple of its weight. Above 1 bodies float,
+	#exactly 1 they hang where they are, below 1 they sink, 0 they sink like a stone.
+	# Default: 2.2
+	# Range: 0.0 ~ 10.0
+	waterBuoyancy = 2.2
+	#The same as waterBuoyancy, for lava.
+	# Default: 2.2
+	# Range: 0.0 ~ 10.0
+	lavaBuoyancy = 2.2
+	#Gravity multiplier for particular mobs, on top of the dimension's gravity. One entry per
+	#mob, as entity=multiplier, like "minecraft:chicken=0.4" or "minecraft:player=1.5".
+	#1 is normal, 0 floats in the air. Mobs not listed use 1.
+	mobGravity = []
+	#Buoyancy for particular mobs, replacing waterBuoyancy and lavaBuoyancy for them. One entry
+	#per mob, as entity=buoyancy, like "minecraft:iron_golem=0.0" so golems sink.
+	#Above 1 floats, below 1 sinks. Mobs not listed use the fluid settings.
+	mobBuoyancy = []
+	#Global multiplier on every ragdoll body's mass.
+	# Default: 1.0
+	# Range: 0.05 ~ 20.0
+	massScale = 1.0
+	#Multiplier on the velocity a ragdoll inherits from the entity when it dies.
+	#1.0 keeps its movement; lower reduces momentum.
+	# Default: 1.0
+	# Range: 0.0 ~ 5.0
+	initialVelocityScale = 1.0
+	#Reduce inherited velocity and knockback for ragdolls smaller than a player, so small
+	#mobs (chickens, bats, bees) don't get launched. Never boosts larger bodies.
+	scaleVelocityByModelSize = true
+	#Lowest multiplier the size reduction above can apply, so tiny ragdolls still react to hits.
+	#Lower = small mobs fly less; 1.0 disables the reduction.
+	# Default: 0.25
+	# Range: 0.05 ~ 1.0
+	minModelSizeVelocityScale = 0.25
+	#Minimum speed, in blocks/second, given to a mob that dies standing still, pushed in the
+	#attacker's look direction. 0 disables it.
+	# Default: 0.75
+	# Range: 0.0 ~ 20.0
+	directionalCarrySpeed = 0.75
+	#How quickly ragdolls lose movement speed. 0 = never, 1 = stop almost instantly.
+	#Higher means bodies slide less.
+	# Default: 0.1
+	# Range: 0.0 ~ 1.0
+	linearDamping = 0.1
+	#How quickly ragdolls lose spin. 0 = never, 1 = stop almost instantly.
+	#Higher means bodies stop tumbling sooner; too high makes hits barely turn them.
+	# Default: 0.15
+	# Range: 0.0 ~ 1.0
+	angularDamping = 0.15
+	#Air drag split between body parts by shape, so light limbs trail behind the torso while
+	#falling. 0 = same drag for every part, 1 = realistic, 2 = exaggerated. Fall speed is
+	#unchanged. Above ~2.5 bodies start to look like they're coming apart.
+	# Default: 1.0
+	# Range: 0.0 ~ 4.0
+	differentialDrag = 1.0
+	#Surface friction for ragdoll bodies and the blocks they land on.
+	#Higher = bodies slide less and piles stick together more.
+	# Default: 0.65
+	# Range: 0.0 ~ 5.0
+	friction = 0.65
+	#Bounciness on impact. 0 = no bounce, 1 = fully elastic. Keep low to avoid jittery bodies.
+	# Default: 0.0
+	# Range: 0.0 ~ 2.0
+	restitution = 0.0
+	#Hard cap on a body's speed in blocks/second, to keep the physics stable.
+	# Default: 90.0
+	# Range: 1.0 ~ 500.0
+	maxLinearSpeed = 90.0
+	#Hard cap on spin rate in radians/second. Prevents bodies from spinning wildly on hard hits.
+	# Default: 8.0
+	# Range: 0.1 ~ 100.0
+	maxAngularSpeed = 8.0
+	#Max ragdolls simulated at once; past this the oldest are frozen until something wakes them.
+	#The main performance setting. Raise it if the physics= figure in the perf log has headroom.
+	# Default: 40
+	# Range: 1 ~ 1000
+	maxActiveRagdolls = 40
+	#Max ragdolls built per tick, so mass kills (like explosions) don't cause a lag spike.
+	#Extra spawns wait in the queue instead of being dropped.
+	# Default: 15
+	# Range: 1 ~ 200
+	maxSpawnsPerTick = 15
+	#Max ragdoll spawns waiting to be built. Deaths while the queue is full get no ragdoll.
+	# Default: 60
+	# Range: 1 ~ 2000
+	maxSpawnQueueSize = 60
+	#How long a ragdoll must lie still before it freezes, in ticks (20 = one second).
+	#Frozen bodies cost almost nothing; a longer delay lets bodies finish toppling.
+	# Default: 20
+	# Range: 5 ~ 200
+	settleDelayTicks = 20
+	#Distance in blocks beyond which ragdoll physics freezes.
+	# Default: 128.0
+	# Range: 4.0 ~ 512.0
+	physicsDistance = 128.0
+	#Distance in blocks within which player movement pushes ragdolls.
+	# Default: 12.0
+	# Range: 0.0 ~ 128.0
+	playerCollisionDistance = 12.0

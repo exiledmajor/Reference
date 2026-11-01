@@ -1,0 +1,25 @@
+{
+  "movement": {
+    "doubleJump": {
+      "enabled": true,
+      "jumpBoostPercent": 40,
+      "delayBeforeDoubleJumpMs": 250,
+      "enableLedgeGrab": true
+    },
+    "dash": {
+      "enabled": true,
+      "cooldownMs": 1502,
+      "useKeybinds": false,
+      "enableAirDash": true,
+      "afterimage": {
+        "enabled": false,
+        "imageCount": 20,
+        "baseLifetimeMs": 120,
+        "prismMode": false
+      }
+    },
+    "general": {
+      "sneakDisablesFeatures": false
+    }
+  }
+}

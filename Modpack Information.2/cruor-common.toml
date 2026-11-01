@@ -1,0 +1,11 @@
+[server]
+	#Send exact hit points to clients that have Cruor. Off, clients guess hits from vanilla packets instead.
+	send_hits = true
+	#Hits that take less health than this don't bleed.
+	# Default: 0.5
+	# Range: 0.0 ~ 100.0
+	min_damage = 0.5
+	#Players further than this many blocks from a hit aren't told about it.
+	# Default: 64
+	# Range: 8 ~ 256
+	send_range = 64

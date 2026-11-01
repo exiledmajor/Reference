@@ -1,0 +1,16 @@
+{
+  "veinMining": true,
+  "treeFelling": true,
+  "requireSneaking": true,
+  "actionFeedback": true,
+  "maxOreBlocks": 12,
+  "maxTreeLogs": 128,
+  "oreHorizontalRadius": 8,
+  "oreVerticalRadius": 6,
+  "treeHorizontalRadius": 7,
+  "treeVerticalRadius": 64,
+  "disabledOreFamilies": [],
+  "disabledWoodFamilies": [],
+  "enabledExtraFamilies": [],
+  "schemaVersion": 2
+}

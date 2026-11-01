@@ -1,0 +1,14 @@
+{
+  "display_name": "Attack Speed : ",
+  "description": "Base Attack Speed: 4.0. Each point adds 0.02 Attack Speed. Default max level: 500.",
+  "cmd_to_exc": [
+    "/attribute @s minecraft:attack_speed base set [param(0.02)]"
+  ],
+  "on_level_event": "",
+  "tip_to_display": "§7Determines how quickly you can swing your weapon. ",
+  "init_val_attribute": 4.0,
+  "max_level": 500.0,
+  "base_value_per_point": 0.02,
+  "lock": false,
+  "icon_path": "screens/att_3.png"
+}

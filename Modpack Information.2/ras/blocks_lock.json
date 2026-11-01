@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "show_feedback": true,
+  "blocks_list": [
+    "[block]minecraft:diamond_ore[blockEnd][level]12[levelEnd]",
+    "[block]minecraft:deepslate_diamond_ore[blockEnd][level]12[levelEnd]",
+    "[block]minecraft:ancient_debris[blockEnd][level]30[levelEnd]"
+  ]
+}

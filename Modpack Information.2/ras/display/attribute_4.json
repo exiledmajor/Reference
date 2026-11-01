@@ -1,0 +1,7 @@
+{
+  "enable": true,
+  "display_name": "§fArmor §f| §b",
+  "attribute_namespace": "minecraft",
+  "attribute_name": "armor",
+  "display_modifer": 1.0
+}

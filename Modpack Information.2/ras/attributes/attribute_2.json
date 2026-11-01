@@ -1,0 +1,14 @@
+{
+  "display_name": "Attack Power : ",
+  "description": "Base Attack Damage: 1.0. Each point adds 0.20 Attack Damage (+1.0 damage every 5 points). Default max level: 500.",
+  "cmd_to_exc": [
+    "/attribute @s minecraft:attack_damage base set [param(0.20)]"
+  ],
+  "on_level_event": "",
+  "tip_to_display": "§7Defines the amount of harm you can inflict with each attack. ",
+  "init_val_attribute": 1.0,
+  "max_level": 500.0,
+  "base_value_per_point": 0.2,
+  "lock": false,
+  "icon_path": "screens/att_2.png"
+}

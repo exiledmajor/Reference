@@ -1,0 +1,261 @@
+[look]
+	#PIXEL: stains at vanilla texel density, snapped to the block's pixel grid. SMOOTH: soft, detailed stains at any angle.
+	#Allowed Values: PIXEL, SMOOTH
+	style = "PIXEL"
+	#Recolours red blood. NATURAL keeps it red; CUSTOM uses custom_color and custom_dried.
+	#Allowed Values: NATURAL, GREEN, BLUE, PURPLE, BLACK, CUSTOM
+	palette = "NATURAL"
+	#Fresh blood colour for the CUSTOM palette, as #RRGGBB.
+	custom_color = "#2A6FB0"
+	#What CUSTOM blood dries to, as #RRGGBB.
+	custom_dried = "#16324D"
+	#Creatures that never bleed or take wounds, by id ("minecraft:zombie") or tag ("#minecraft:raiders").
+	entity_blacklist = []
+	#Wet blood reflects light: the sky, and a glint of the sun or moon, on fresh pools and splats,
+	#fading as it dries. Under a shader pack, blood's textures get specular maps (LabPBR) for packs that read them.
+	specular = false
+	#Brightens blood in the world (stains, drops, mist) while a shader pack is on. Packs light its
+	#dark red as they would a dark block, which out of the sun leaves it near black. 1 for none.
+	# Default: 1.6
+	# Range: 1.0 ~ 2.5
+	shader_pack_brightness = 1.6
+
+[performance]
+	#How many droplets each hit throws. LOW suits weak machines and big fights.
+	#Allowed Values: LOW, MEDIUM, HIGH
+	quality = "HIGH"
+	#Droplets in the air at once. The oldest land early once this is reached.
+	# Default: 2048
+	# Range: 64 ~ 16384
+	max_droplets = 2048
+	#Stains kept in the world at once. The oldest go first once this is reached.
+	# Default: 12000
+	# Range: 256 ~ 100000
+	max_stains = 12000
+	#Stains and droplets further than this many blocks away aren't drawn.
+	# Default: 64
+	# Range: 16 ~ 256
+	render_distance = 64
+
+[blood]
+	#MILD, REALISTIC or EXTREME: scales spray, bleeding, pools, wounds and footprints together.
+	#Allowed Values: MILD, REALISTIC, EXTREME
+	preset = "REALISTIC"
+	#Scales how much blood every hit throws, on top of the preset.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	amount = 1.0
+	#Seconds a stain stays before fading. Water and rain wash it off sooner.
+	# Default: 600
+	# Range: 10 ~ 86400
+	stain_lifetime = 600
+	#Seconds fresh blood takes to dry dark brown.
+	# Default: 180
+	# Range: 5 ~ 3600
+	dry_time = 180
+	#Stains are saved when you leave a world or server and come back when you return.
+	keep_stains = true
+	#Heavy stains on walls run downwards.
+	runs = true
+	#Drops gather and drip from wet ceilings and from the bottom edges of runs.
+	drips = true
+	#Blood that keeps dripping onto one spot collects into a spreading pool.
+	pools = true
+	#A pool spreads under creatures that die of a bleeding wound.
+	death_pools = false
+	#Scales how far pools spread.
+	# Default: 1.0
+	# Range: 0.1 ~ 4.0
+	pool_size = 1.0
+	#Scales the pool a body leaves, when death_pools is on.
+	# Default: 1.0
+	# Range: 0.1 ~ 4.0
+	death_pool_size = 1.0
+	#Surfaces take blood differently: wool, wood, dirt and sand soak it up, glass and ice make it bead and run, snow turns pink.
+	surfaces = true
+	#Blood on wool, planks, logs, hay and other absorbent blocks soaks through to the far side of the block over time, and drips from it if that's a ceiling. Needs surfaces.
+	soak_through = true
+	#Seconds before soaked-in blood starts showing on the far side of the block. It takes about as long again to come all the way through.
+	# Default: 20
+	# Range: 1 ~ 600
+	soak_time = 20
+	#Walking through wet blood leaves bloody footprints for a few steps: many from a pool, fewer from a splatter.
+	footprints = true
+	#Scales how many steps footprints last.
+	# Default: 4.0
+	# Range: 0.1 ~ 10.0
+	footprint_steps = 4.0
+	#SHOE: shoe prints with sole and heel, paws and hooves. SQUARE: square prints the shape of a player's or mob's blocky leg.
+	#Allowed Values: SHOE, SQUARE
+	footprint_shape = "SQUARE"
+	#Seconds footprints last before they've faded away, fading out over the last third. 0 keeps them as long as other stains.
+	# Default: 30
+	# Range: 0 ~ 3600
+	footprint_fade = 30
+	#Blood in water spreads into red clouds instead of vanishing, and hisses on lava.
+	water = true
+
+[hit]
+	#Each hit throws a spray of droplets shaped by the wound.
+	spray = true
+	#The splash sprite drawn right at the wound for the blink after a hit, on top of the spray.
+	burst = false
+	#A puff of fine mist that hangs at the wound.
+	mist = true
+	#Big hits throw a few heavy gouts that land as large splats.
+	gouts = true
+	#Blood keeps pumping out of the wound for a few ticks after the hit.
+	stream = true
+	#Scales how fast, and so how far, hit spray flies.
+	# Default: 1.0
+	# Range: 0.1 ~ 3.0
+	spray_speed = 1.0
+	#Scales the size of droplets a hit throws.
+	# Default: 1.0
+	# Range: 0.25 ~ 3.0
+	droplet_size = 1.0
+	#Brightness of blood in the air (spray, drips, falling drops) next to blood that has landed.
+	# Default: 0.8
+	# Range: 0.3 ~ 1.5
+	droplet_brightness = 0.8
+
+[bleeding]
+	#Wounded creatures bleed for a while after each hit, leaving a trail of drops as they move.
+	bleeding = true
+	#Below this fraction of max health creatures keep bleeding slowly. 0 turns it off.
+	# Default: 0.35
+	# Range: 0.0 ~ 1.0
+	bleed_health = 0.35
+	#Scales how much a wound bleeds.
+	# Default: 1.0
+	# Range: 0.0 ~ 4.0
+	bleed_amount = 1.0
+	#Scales how long a wound keeps bleeding.
+	# Default: 1.0
+	# Range: 0.1 ~ 5.0
+	bleed_time = 1.0
+
+[wounds]
+	#Blood on creatures where they were hit.
+	wounds = true
+	#Hits that land on armour mark the armour instead.
+	armour = true
+	#Scales the size of wounds.
+	# Default: 1.0
+	# Range: 0.25 ~ 3.0
+	size = 1.0
+	#Blood runs down the body from wounds.
+	drips = true
+	#Blood thrown off a hit sticks to whoever it lands on, skin and armour, the attacker included.
+	spatter = true
+	#Seconds blood that's landed on someone stays before wearing off, once they're unhurt.
+	#Water rinses it at once.
+	# Default: 120
+	# Range: 5 ~ 86400
+	spatter_lasts = 120
+
+[weapons]
+	#Blood on the weapon that made a hit.
+	blood = true
+	#A bloody weapon that's dropped keeps its blood on the ground, and when picked up again.
+	dropped = true
+	#Scales how much of the weapon each hit covers.
+	# Default: 1.0
+	# Range: 0.1 ~ 4.0
+	coverage = 1.0
+	#How opaque blood on weapons is. Lower lets more of the weapon show through it.
+	# Default: 1.0
+	# Range: 0.0 ~ 1.0
+	opacity = 1.0
+	#Bloody weapons show their blood in the hotbar too.
+	hotbar = true
+	#Blood drips off the weapon's tip for a while after a hit.
+	drips = true
+	#Seconds weapon blood stays before wearing off. Water rinses it at once.
+	# Default: 300
+	# Range: 5 ~ 86400
+	lasts = 300
+
+[sounds]
+	#Blood makes sounds at all.
+	sounds = true
+	#Volume of all blood sounds.
+	# Default: 1.0
+	# Range: 0.0 ~ 2.0
+	volume = 1.0
+	#Volume of the hit itself.
+	# Default: 0.0
+	# Range: 0.0 ~ 2.0
+	hit = 0.0
+	#Volume of blood forced out of deep wounds.
+	# Default: 0.0
+	# Range: 0.0 ~ 2.0
+	spurt = 0.0
+	#Volume of drops landing.
+	# Default: 1.0
+	# Range: 0.0 ~ 2.0
+	splat = 1.0
+	#Volume of drips from ceilings, runs and weapons.
+	# Default: 0.5
+	# Range: 0.0 ~ 2.0
+	drip = 0.5
+	#Volume of stepping in pools and of each bloody footprint.
+	# Default: 0.0
+	# Range: 0.0 ~ 2.0
+	step = 0.0
+	#Volume of blood hissing on lava.
+	# Default: 1.0
+	# Range: 0.0 ~ 2.0
+	sizzle = 1.0
+
+	#Which sounds each thing plays, one picked at random. Any sound id works, from Cruor (cruor:hit_1 to
+	#hit_8, spurt_1 to 5, splat_1 to 6, drip_1 to 4, drip_1_muffled, drip_2_muffled, squelch_1 to 5), vanilla or other mods.
+	#An empty list is silent. In game, /cruor sound <id> plays one and /cruor sounds <thing> a pick.
+	[sounds.pick]
+		#A hit landing.
+		hit = ["cruor:hit_1", "cruor:hit_2", "cruor:hit_3", "cruor:hit_4", "cruor:hit_5", "cruor:hit_6", "cruor:hit_7", "cruor:hit_8"]
+		#Blood forced out of a deep wound.
+		spurt = ["cruor:spurt_1", "cruor:spurt_2", "cruor:spurt_3", "cruor:spurt_4", "cruor:spurt_5"]
+		#A drop splatting onto something.
+		splat = ["cruor:splat_1", "cruor:splat_2", "cruor:splat_3", "cruor:splat_4", "cruor:splat_5", "cruor:splat_6"]
+		#A drop falling onto a floor or into a pool.
+		drip = ["cruor:drip_1", "cruor:drip_2"]
+		#A drop that only fell a little way, muffled and quieter.
+		soft_drip = ["cruor:drip_1_muffled", "cruor:drip_2_muffled"]
+		#A drop falling into water.
+		water_drip = ["cruor:drip_3", "cruor:drip_4"]
+		#Stepping in a pool.
+		step = ["cruor:drip_1_muffled", "cruor:drip_2_muffled"]
+		#Each step that leaves a bloody footprint, quieter as the blood wears off.
+		squelch = ["cruor:squelch_1", "cruor:squelch_2", "cruor:squelch_3", "cruor:squelch_4", "cruor:squelch_5"]
+		#Blood hissing on lava.
+		sizzle = ["minecraft:block.lava.extinguish"]
+
+[screen]
+	#Blood creeps in from the screen edges when you're hurt.
+	vignette = true
+	#How strong that is.
+	# Default: 1.0
+	# Range: 0.0 ~ 2.0
+	vignette_strength = 1.0
+
+[compat]
+	#On servers without Cruor, work out hits from vanilla damage packets so blood still shows.
+	guess_hits = true
+	#With Ragdollified, blood spurts from where a limb came off: in time with the heart on the living,
+	#a last beat or two and an ebbing gush on a body that just died, and a slow ooze from an old corpse.
+	stumps = true
+	#Scales how much blood a stump throws, on the body and on the limb.
+	# Default: 1.0
+	# Range: 0.0 ~ 4.0
+	stump_amount = 1.0
+	#Scales how long a stump keeps bleeding.
+	# Default: 1.0
+	# Range: 0.1 ~ 5.0
+	stump_time = 1.0
+	#Scales how fast, and so how far, blood sprays out of a stump.
+	# Default: 1.0
+	# Range: 0.1 ~ 3.0
+	stump_speed = 1.0
+	#The limb that came off bleeds from its cut end too, not just the body it came off.
+	stump_limbs = true

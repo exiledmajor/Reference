@@ -1,0 +1,7 @@
+{
+  "enable": true,
+  "display_name": "§fToughness §f| §9",
+  "attribute_namespace": "minecraft",
+  "attribute_name": "armor_toughness",
+  "display_modifer": 1.0
+}

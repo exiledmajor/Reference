@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "permission-required": true,
+  "cost-enabled": false,
+  "cost": 1000.0,
+  "cost-type": "none",
+  "xp-level-cost": 0.0,
+  "require-item": false,
+  "item-id": "rpg_attribute_system:scroll_of_rebirth",
+  "cooldown-seconds": 0.0,
+  "refund-all-points": true,
+  "cost-command": ""
+}

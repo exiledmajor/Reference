@@ -1,0 +1,165 @@
+// Remnants: RPG Mobs 3.0: traits of ranked mobs.
+// Every trait has enabled, weight (relative roll chance), min_rank (the lowest rank that can roll it)
+// and exclude (entity ids, #entity_type tags or "namespace:" prefixes that never get it).
+// Infernal and Frostbite never roll together, nor Swift and Juggernaut.
+// Edit and run /remnants reload, or restart. Missing keys are restored with their defaults.
+{
+  // Heals heal_fraction of the damage it deals.
+  "vampiric": {
+    "enabled": true,
+    "weight": 10,
+    "min_rank": "veteran",
+    "exclude": [],
+    "heal_fraction": 0.3
+  },
+
+  // Hits slow for slowness_seconds (amplifier slowness_level) and add freeze_ticks of frost.
+  "frostbite": {
+    "enabled": true,
+    "weight": 10,
+    "min_rank": "veteran",
+    "exclude": [],
+    "slowness_seconds": 3,
+    "slowness_level": 2,
+    "freeze_ticks": 100
+  },
+
+  // Fire immune; hits set the target on fire for fire_seconds.
+  "infernal": {
+    "enabled": true,
+    "weight": 10,
+    "min_rank": "veteran",
+    "exclude": [],
+    "fire_seconds": 4
+  },
+
+  // Hits poison for poison_seconds (Poison II from Champion rank).
+  "venomous": {
+    "enabled": true,
+    "weight": 10,
+    "min_rank": "veteran",
+    "exclude": [],
+    "poison_seconds": 4
+  },
+
+  // Hits wither for wither_seconds.
+  "withering": {
+    "enabled": true,
+    "weight": 8,
+    "min_rank": "elite",
+    "exclude": [],
+    "wither_seconds": 3
+  },
+
+  // Below below_health of its health: +damage_bonus damage and +speed_bonus speed.
+  "berserk": {
+    "enabled": true,
+    "weight": 10,
+    "min_rank": "veteran",
+    "exclude": [],
+    "below_health": 0.5,
+    "damage_bonus": 0.4,
+    "speed_bonus": 0.25
+  },
+
+  // Hits knock back knockback blocks harder and disable shields for shield_seconds.
+  "crushing": {
+    "enabled": true,
+    "weight": 8,
+    "min_rank": "veteran",
+    "exclude": [],
+    "knockback": 1.5,
+    "shield_seconds": 3
+  },
+
+  // Immune to knockback, +health_bonus health, +armor armor, -speed_penalty speed.
+  "juggernaut": {
+    "enabled": true,
+    "weight": 8,
+    "min_rank": "elite",
+    "exclude": [],
+    "health_bonus": 0.5,
+    "armor": 4,
+    "speed_penalty": 0.1
+  },
+
+  // Reflects reflect of the melee damage it takes.
+  "thornskin": {
+    "enabled": true,
+    "weight": 10,
+    "min_rank": "veteran",
+    "exclude": [],
+    "reflect": 0.25
+  },
+
+  // Absorption worth shield_fraction of its max health, regrown regrow_seconds after it was last hurt.
+  "warded": {
+    "enabled": true,
+    "weight": 8,
+    "min_rank": "elite",
+    "exclude": [],
+    "shield_fraction": 0.25,
+    "regrow_seconds": 6
+  },
+
+  // Regains per_second of its max health each second, in_combat while hurt in the last combat_seconds.
+  "regenerating": {
+    "enabled": true,
+    "weight": 10,
+    "min_rank": "veteran",
+    "exclude": [],
+    "per_second": 0.02,
+    "in_combat": 0.005,
+    "combat_seconds": 3
+  },
+
+  // Projectiles deal reduction less damage to it.
+  "deflecting": {
+    "enabled": true,
+    "weight": 10,
+    "min_rank": "veteran",
+    "exclude": [],
+    "reduction": 0.6
+  },
+
+  // +speed_bonus movement speed.
+  "swift": {
+    "enabled": true,
+    "weight": 10,
+    "min_rank": "veteran",
+    "exclude": [],
+    "speed_bonus": 0.3
+  },
+
+  // When hit, chance to teleport behind its attacker (within range blocks), every cooldown_seconds at most.
+  "blinking": {
+    "enabled": true,
+    "weight": 8,
+    "min_rank": "elite",
+    "exclude": [],
+    "chance": 0.3,
+    "cooldown_seconds": 5,
+    "range": 8
+  },
+
+  // Below health_threshold of its health, once, calls minions copies minion_levels levels lower.
+  "packleader": {
+    "enabled": true,
+    "weight": 6,
+    "min_rank": "elite",
+    "exclude": [],
+    "health_threshold": 0.6,
+    "minions": 2,
+    "minion_levels": 5
+  },
+
+  // Explodes fuse_seconds after death with power power (no block damage).
+  "volatile": {
+    "enabled": true,
+    "weight": 6,
+    "min_rank": "veteran",
+    "exclude": [],
+    "power": 2.5,
+    "fuse_seconds": 1.5
+  }
+}

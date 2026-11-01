@@ -1,0 +1,7 @@
+{
+  "enable": true,
+  "display_name": "§fMS §f| §a",
+  "attribute_namespace": "minecraft",
+  "attribute_name": "movement_speed",
+  "display_modifer": 1.0
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "difficulty_weighting": {"enabled": false, "peaceful": 1, "easy": 1, "normal": 1, "hard": 1},
+  "armor_weighting": {"enabled": false, "per_armor_point": 0, "max_multiplier": 5},
+  "rules": []
+}

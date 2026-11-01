@@ -1,0 +1,14 @@
+{
+  "display_name": "Protection : ",
+  "description": "Base Armor: 0.0. Each point adds 0.25 Armor (+1.0 armor every 4 points). Default max level: 500.",
+  "cmd_to_exc": [
+    "/attribute @s minecraft:armor base set [param(0.25)]"
+  ],
+  "on_level_event": "",
+  "tip_to_display": "§7Reduces the amount of damage you take from enemy attacks",
+  "init_val_attribute": 0.0,
+  "max_level": 500.0,
+  "base_value_per_point": 0.25,
+  "lock": false,
+  "icon_path": "screens/att_4.png"
+}

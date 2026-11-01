@@ -1,0 +1,7 @@
+{
+  "enable": true,
+  "display_name": "§fLuck §f| §d",
+  "attribute_namespace": "minecraft",
+  "attribute_name": "luck",
+  "display_modifer": 1.0
+}

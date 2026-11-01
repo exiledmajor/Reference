@@ -1,0 +1,14 @@
+{
+  "display_name": "Cyberware Versatility : ",
+  "description": "Each Versatility point adds 1 Chromeware capacity, reduces cyberware cooldowns, and slightly extends duration-based cyberware. It is a premium stat: two RAS upgrade points buy one Versatility point.",
+  "cmd_to_exc": [
+    "/attribute @s mainframe_progression:cyberware_versatility base set [param(1.0)]"
+  ],
+  "on_level_event": "",
+  "tip_to_display": "§7Premium chrome stat. Capacity +1, cooldown -0.35%, duration +0.15% per point. Two RAS points per Versatility.",
+  "init_val_attribute": 0.0,
+  "max_level": 250.0,
+  "base_value_per_point": 0.5,
+  "lock": false,
+  "icon_path": "screens/att_9.png"
+}

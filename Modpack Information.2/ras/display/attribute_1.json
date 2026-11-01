@@ -1,0 +1,7 @@
+{
+  "enable": true,
+  "display_name": "§fHealth §f| §4",
+  "attribute_namespace": "minecraft",
+  "attribute_name": "max_health",
+  "display_modifer": 1.0
+}

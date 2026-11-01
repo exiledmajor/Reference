@@ -1,0 +1,7 @@
+{
+  "enable": true,
+  "display_name": "§fKnock Res §f| §8",
+  "attribute_namespace": "minecraft",
+  "attribute_name": "knockback_resistance",
+  "display_modifer": 1.0
+}

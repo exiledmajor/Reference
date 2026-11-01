@@ -1,0 +1,7 @@
+{
+  "enable": true,
+  "display_name": "§fAS §f| §e",
+  "attribute_namespace": "minecraft",
+  "attribute_name": "attack_speed",
+  "display_modifer": 1.0
+}

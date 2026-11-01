@@ -1,0 +1,12 @@
+{
+  "header_color": "#F0A43A",
+  "bonus_positive_color": "#9BC46A",
+  "bonus_neutral_color": "#CFC8B8",
+  "gui_shadow_color": "#B57BEB",
+  "totals": [
+    "[label]Total Health Bonus[labelEnd][ids]1[idsEnd][mode]bonus[modeEnd]",
+    "[label]Total Damage Bonus[labelEnd][ids]2[idsEnd][mode]bonus[modeEnd]",
+    "[label]Total Attack Speed Bonus[labelEnd][ids]3[idsEnd][mode]bonus[modeEnd]",
+    "[label]Total Defense Bonus[labelEnd][ids]4[idsEnd][mode]bonus[modeEnd]"
+  ]
+}

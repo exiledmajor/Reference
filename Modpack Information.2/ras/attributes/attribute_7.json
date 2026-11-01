@@ -1,0 +1,14 @@
+{
+  "display_name": "Toughness : ",
+  "description": "Base Armor Toughness: 0.0. Each point adds 0.10 Armor Toughness (+1.0 toughness every 10 points). Default max level: 500.",
+  "cmd_to_exc": [
+    "/attribute @s minecraft:armor_toughness base set [param(0.1)]"
+  ],
+  "on_level_event": "",
+  "tip_to_display": "§7Increases your armor\u0027s effectiveness against high-damage attacks",
+  "init_val_attribute": 0.0,
+  "max_level": 500.0,
+  "base_value_per_point": 0.1,
+  "lock": false,
+  "icon_path": "screens/att_7.png"
+}

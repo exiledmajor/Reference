@@ -1,0 +1,14 @@
+{
+  "bosses_list": [
+    "minecraft:wither",
+    "minecraft:ender_dragon"
+  ],
+  "default_vp_rates": 1.0,
+  "min_drop_rate": 1.0,
+  "max_drop_rate": 3.0,
+  "dimensions_drop_rates": [
+    "minecraft:overworld/1",
+    "minecraft:the_nether/1.5",
+    "minecraft:the_end/2"
+  ]
+}
