@@ -1,0 +1,36 @@
+#Corpse Settings
+[corpse]
+	#When a player dies, their body becomes a lootable corpse holding their inventory.
+	#Needs this mod on both the server and the client.
+	enableCorpses = true
+	#How long an unlooted corpse lasts, in ticks, before dropping its items. 24000 = 1 day.
+	#Like a dropped item it only ages while its chunk is loaded, and its age is saved with it.
+	#Once fully looted, the body stays for Ragdollified's ragdollLifetime instead.
+	# Default: 24000
+	# Range: 1200 ~ 2400000
+	corpseExpiryTicks = 24000
+	#Max ticks to wait for the ragdoll to come to rest before the corpse is placed flat
+	#at the death spot instead. 600 = 30 seconds.
+	# Default: 600
+	# Range: 20 ~ 6000
+	corpseSettleTimeoutTicks = 600
+	#Keep the XP a player would drop inside their corpse and release it once looted.
+	corpseStoreXp = true
+	#Give respawning players a Corpse Compass that points to their latest corpse.
+	enableCorpseCompass = true
+	#Remove a Corpse Compass once its corpse has been fully looted or is gone.
+	#Compasses stored in containers go the next time they are carried or dropped.
+	removeCompassWhenLooted = true
+	#How long a corpse lasts, in ticks, before the body rots down to a skeleton. 24000 = 1 day.
+	#It ages on the same clock as corpseExpiryTicks, so setting this at or above that value
+	#means a corpse is always taken away before it ever turns: raise corpseExpiryTicks to
+	#leave a skeletal stage. 0 makes a corpse skeletal from the moment it forms.
+	# Default: 24000
+	# Range: 0 ~ 2400000
+	corpseSkeletonTicks = 24000
+	#Only let a corpse's owner loot it. Everyone else is refused, and the body cannot be
+	#opened out from under them. Dragging is unaffected.
+	ownerOnlyLooting = false
+	#With ownerOnlyLooting on, let anyone loot a corpse once it has rotted to a skeleton
+	#(see corpseSkeletonTicks). Ignored entirely while ownerOnlyLooting is off.
+	othersLootWhenSkeletal = false

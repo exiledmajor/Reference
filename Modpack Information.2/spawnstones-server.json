@@ -1,0 +1,4 @@
+{
+  "_comment": "When onlyWaystonesFromDeathDimension is true, the death screen only offers waystones in the dimension the player died in. When false it offers every waystone, with that dimension listed first. Changing this needs a server restart.",
+  "onlyWaystonesFromDeathDimension": false
+}

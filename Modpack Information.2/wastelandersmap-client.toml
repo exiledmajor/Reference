@@ -1,0 +1,110 @@
+[minimap]
+	#Show the minimap overlay.
+	enabled = true
+	#Minimap size in GUI pixels. Easiest to set with the Minimap button on the fullscreen map.
+	# Default: 96
+	# Range: 32 ~ 512
+	size = 50
+	#Minimap zoom in GUI pixels per block.
+	# Default: 1.0
+	# Range: 0.25 ~ 8.0
+	zoom = 1.0
+	#Horizontal position: 0 = left edge of the screen, 1 = right edge.
+	# Default: 1.0
+	# Range: 0.0 ~ 1.0
+	positionX = 1.0
+	#Vertical position: 0 = top edge of the screen, 1 = bottom edge.
+	# Default: 0.0
+	# Range: 0.0 ~ 1.0
+	positionY = 0.0
+	#Minimap shape.
+	#Allowed Values: SQUARE, HEXAGON, CIRCLE
+	shape = "HEXAGON"
+	#Show coordinates and the current map layer below the minimap.
+	showCoordinates = true
+	#Draw CRT scanlines over the map.
+	scanlines = true
+	#Draw a faint chunk grid over the map.
+	showGrid = true
+
+[colors]
+	#Map colors the Color light on the fullscreen map cycles through, in order. Each entry is
+	#Name:#RRGGBB, e.g. Mint:#8CFFD0. The color is the brightest terrain; the rest of the map is shaded from it.
+	themes = ["Green:#00ff9f", "Amber:#FFB642", "Blue:#4CC8FF", "White:#DCE8F0", "Red:#FF5A4A", "Pink:#FF7AD9"]
+	#Name of the color in use. Also switchable with the Color light on the map.
+	theme = "Green"
+
+[shading]
+	#Surface height mapped to the 'low' color.
+	# Default: 40
+	# Range: -2048 ~ 4096
+	surfaceMinY = 40
+	#Surface height mapped to the 'high' color.
+	# Default: 180
+	# Range: -2048 ~ 4096
+	surfaceMaxY = 180
+	#Strength of slope shading. 0 disables it.
+	# Default: 0.6
+	# Range: 0.0 ~ 3.0
+	hillshade = 0.6
+	#Draw a contour line every N blocks of height on the surface. 0 disables contour lines.
+	# Default: 8
+	# Range: 0 ~ 128
+	contourInterval = 8
+	#Height drop (in blocks) that gets an outline on the surface map.
+	# Default: 3
+	# Range: 1 ~ 64
+	edgeThreshold = 3
+	#Height drop (in blocks) that gets an outline in layer view.
+	# Default: 1
+	# Range: 1 ~ 64
+	layerEdgeThreshold = 1
+	#Mark tree canopies with a dot pattern.
+	showTrees = true
+
+[underground]
+	#When to show the layer view instead of the surface.
+	#Allowed Values: AUTO, SURFACE_ONLY, ALWAYS
+	mode = "AUTO"
+	#How far above the player's head to look for a roof.
+	# Default: 24
+	# Range: 2 ~ 128
+	roofCheckHeight = 24
+	#How many blocks below the player's feet the layer view looks for a floor.
+	# Default: 16
+	# Range: 2 ~ 64
+	layerDepth = 16
+	#Ticks the roof state must stay the same before the map switches views.
+	# Default: 10
+	# Range: 0 ~ 200
+	switchDelayTicks = 10
+
+#Structure markers. Structure locations are only known to the server, so this works in singleplayer
+#and on LAN worlds you host.
+[structures]
+	#Show structures near the player on the map.
+	enabled = true
+	#Structures within this many blocks of the player appear as '?' markers.
+	# Default: 512
+	# Range: 64 ~ 4096
+	detectRadius = 512
+	#Getting this close (in blocks, including height) to a structure's bounds reveals its name.
+	# Default: 24
+	# Range: 0 ~ 512
+	revealDistance = 24
+	#Structures never shown. Entries are ids like minecraft:mineshaft; a trailing * matches any suffix.
+	hidden = ["minecraft:mineshaft*", "minecraft:buried_treasure", "minecraft:nether_fossil"]
+
+[waypoints]
+	#Show your waypoints on the minimap. They're always shown on the fullscreen map, where you add and delete them.
+	showOnMinimap = true
+
+[waystones]
+	#Show your activated waystones on the map (requires the Waystones mod).
+	showOnMap = true
+
+[performance]
+	#Milliseconds per tick spent scanning chunks.
+	# Default: 3.0
+	# Range: 0.5 ~ 20.0
+	scanBudgetMs = 3.0
